@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="src/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="src/assets/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="src/assets/favicon-16x16.png">
+  <link href="src/main.css" rel="stylesheet">
+  <title>BBS- OneView</title>
+  <script src="//unpkg.com/alpinejs" defer></script>
+  <script src="./src/scripts/main.js" type="module" defer></script>
+</head>
+
+<body>
+  <!-- <h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1> -->
+  <div class="area">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <!-- For background animation -->
+
+  <!-- Content area -->
+  <div class="container overflow-x-hidden">
+    <div class="demo version-section"><a href="https://github.com/CSE-BBS-college/BBS-OneView/" target="_blank"
+        class="github-corner" aria-label="View source on GitHub">
+        <svg width="80" height="80" viewBox="0 0 250 250"
+          style="fill:#ffffff; color:#010409; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+          <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+          <path
+            d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+            fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+          <path
+            d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+            fill="currentColor" class="octo-body"></path>
+        </svg></a>
+      <!-- <img src="https://img.shields.io/badge/View%20on-GitHub-1f425f.svg" alt="View source on GitHub"> -->
+    </div>
+
+    <header
+      class=" header w-screen flex flex-col justify-center items-center text-yellow-300  text-[76px] font-bold  cursor-pointer">
+      <p ></p>BBSCET</p>
+      <img src="https://img.shields.io/badge/Made%20by-CSE--BBSCET-blue" alt="Made by CSE-BBSCET">
+    </header>
+
+    <main class="overflow-hidden  w-full sm:w-[90%] mx-auto mt-8  flex flex-row items-center justify-center">
+          <div class="w-fit min-w-[375px] px-2 py-8 bg-slate-50 shadow-xl flex flex-col items-center rounded-md" id="initial__view">
+            <div class="pb-2 max-w-sm max-h-sm relative">
+              <img src="./src/assets/logo.png" width="150px" height="150px">
+            </div>
+            <span class="font-semibold text-lg center text-black-400 mb-2">--- CT-1 Results ---</span>
+            <div class="alert_section"></div>
+            <label class="inline-flex relative items-center cursor-pointer mt-2">
+              <input type="checkbox" value="" class="sr-only peer" id="teacher-toggle">
+              <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+              <span class="ml-2 text-sm font-medium text-neutral-800 dark:text-gray-700">Teacher View</span>
+            </label>
+           
+            <form id="flex flex-col items-center ">
+              <div class="mt-4 mb-4">
+                <!-- <label for="rn" class="ml-2">AKTU Roll Number</label> -->
+                <div class="student__view flex flex-col items-start ">
+                  <label for="username" class="ml-2 text-sm text-neutral-800  mt-1">ROLL NUMBER</label>
+                  <input type="number" class="px-4 py-4 bg-blue-200 placeholder:text-[#141c27]
+                  placeholder:text-sm
+                  placeholder:opacity-60 rounded-lg shadow-sm h-10 mt-1.5 w-[280px] outline-0 focus:outline-sky-800" maxlength="13" placeholder="Enter your Roll Number" name="rn" id="roll-number" pattern="[0-9]{13}" >
+  
+                  <input type="submit" class="bg-sky-800 w-full h-10 rounded-md text-white text-[0.9rem] p-2 cursor-pointer hover:bg-sky-900 mt-3.5 " name="submit" value="View Result" id="student__submit">
+                </div>
+
+                <div class="teacher__view hidden flex flex-col items-start ">
+                    <label for="username" class="ml-2 text-sm text-neutral-800  mt-1">USERNAME</label>
+                  <input type="text" class="px-4 py-4 bg-blue-200 placeholder:text-[#141c27]
+                  placeholder:text-sm
+                  placeholder:opacity-60 rounded-lg shadow-sm h-10 mt-1.5 w-[280px] outline-0 focus:outline-sky-800" maxlength="6" placeholder="Enter your Teacher id" name="username" id="username"  required>
+
+                  <label for="rn" class="ml-2 text-sm text-neutral-800 mt-4">PASSWORD</label>
+                  <input type="password" class="px-4 py-4 bg-blue-200 placeholder:text-[#141c27] 
+                  placeholder:text-sm
+                  placeholder:opacity-60 rounded-lg shadow-sm h-10 mt-1.5 w-[280px] outline-0 focus:outline-sky-800" maxlength="13" placeholder="Enter your Password" name="password" id="password" >
+  
+                  <input type="submit" class="bg-sky-800 w-full h-10 rounded-md text-white text-[0.9rem] p-2 cursor-pointer hover:bg-sky-900 mt-3.5 " name="submit" value="log in" id="teacher__submit">
+                </div>
+               </div>
+            </form>
+          </div>
+
+          <!--Result View-->
+          <div class="hidden w-fit  p-16 sm:-p-6 bg-slate-50 shadow-xl flex flex-col items-center rounded-md" id="result__view"></div>      
+    </main>
+  </div>
+</body>
+
+</html>
