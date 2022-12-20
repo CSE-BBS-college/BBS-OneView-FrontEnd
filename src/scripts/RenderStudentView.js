@@ -3,7 +3,17 @@ import { Success, Error } from "./Utils/Alert";
 import logo from '../assets/logo.png';
 import notfound from '../assets/404.png';
 const result__view = document.getElementById('result__view');
-
+const number_format = (number) => {
+  if (number ==1)
+    return "1<sup>st<sup>";
+  else if (number ==2)
+    return "2<sup>nd<sup>";
+  else if (number ==3)
+    return "3<sup>rd<sup>";
+  else
+    return number+"<sup>th<sup>";
+}
+ 
 const RenderStudentView = async (roll_number) => {
     const result = await FetchResult(roll_number);
     console.log(result);
@@ -12,6 +22,7 @@ const RenderStudentView = async (roll_number) => {
         const subjects = JSON.parse(result.data.Subjects);
         const total_marks = marks.reduce((a, b) => a + b, 0);
         const percentage = ((total_marks / (marks.length * 30)) * 100).toFixed(2);
+
         result__view.innerHTML = `
             <div class="result__view w-fit sm:-w-[95%] sm:-overflow-x-auto" >
             <div class="flex flex-col justify-center items-center">
@@ -36,16 +47,16 @@ const RenderStudentView = async (roll_number) => {
 
                     <h1 class="student__name">
                     <span class="font-medium">Year: </span>
-                    ${result.data.Year}</h1>
+                    ${number_format(result.data.Year)}</h1>
                 </div>
                 <div class="flex flex-col justify-center items-start gap-[0.18rem]">
                     <h3 class="student__total-marks">
                     <span class="font-medium">Semester: </span>
-                    ${result.data.Semester}
+                    ${number_format(result.data.Semester)}
                     </h3>
                     <h3 class="student__total-marks">
                     <span class="font-medium">Total Marks: </span>
-                    ${total_marks}</h3>
+                    ${total_marks +" / "+subjects.length*30}</h3>
                     <h3 class="student__percentage">
                     <span class="font-medium">Percentage: </span>
                     ${percentage +" " + "%"}</h3>
